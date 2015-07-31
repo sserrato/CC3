@@ -1,0 +1,53 @@
+
+<h1> Complete your profile </h1>
+
+<div class="form-group">
+  <%= form_for @user do |f| %>
+
+  <%= f.label :first_name%>
+  <%= f.text_field :first_name, class: "form-control",  :value => "Your first name" %>
+
+  <%= f.label :last_name%>
+  <%= f.text_field :last_name, class: "form-control",  :value => "Your last name" %>
+
+  <%= f.label :phone %>
+  <%= f.text_field :phone, class: "form-control",  :value => "555-555-5555" %>
+
+  <%= f.label :street%>
+  <%= f.text_field :street, class: "form-control",  :value => "100 Broadway Avenue" %>
+
+  <%= f.label :city %>
+  <%= f.text_field :city, class: "form-control",  :value => "Santa Monica" %>
+
+  <%= f.label :state %>
+  <%= f.text_field :state, class: "form-control",  :value => "CA" %>
+
+  <%= f.label :zip %>
+  <%= f.text_field :zip, class: "form-control",  :value => "90404" %>
+
+  <h2>Your skills </h2>
+    <div class="well well-lg">
+    <% @user.skills.each do |skill_list| %>
+      <%= f.fields_for skill_list do |skill| %>
+
+        <%= skill.label "block mason" %>
+        <%= skill.check_box :sk_block_mason %>
+
+        <%= skill.label "brick mason" %>
+        <%= skill.check_box :sk_brick_mason %>
+
+        <%= skill.label "finisher" %>
+        <%= skill.check_box :sk_finisher %>
+
+        <%= skill.label "form setter" %>
+        <%= skill.check_box :sk_form_setter %>
+
+        <%= skill.label "stone mason" %>
+        <%= skill.check_box :sk_stone_mason %>
+
+      <% end %>
+    <% end %>
+  </div>    
+  <%= f.submit %>
+  <% end %>
+</div>

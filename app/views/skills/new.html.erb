@@ -1,0 +1,15 @@
+<h1>Skills#new</h1>
+<p>Find me in app/views/skills/new.html.erb</p>
+
+<%= form_for @skills do |s| %>
+  <%= s.label "block mason" %>
+  <%= s.check_box :sk_block_mason %>
+  <%= s.label "brick mason" %>
+  <%= s.check_box :sk_brick_mason %>
+  <%= s.label "finisher" %>
+  <%= s.check_box :sk_finisher %>
+  <%= s.label "form setter" %>
+  <%= s.check_box :sk_form_setter %>
+
+  <%= s.submit %>
+  <% end %>

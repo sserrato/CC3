@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CC3</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">ConcreteC</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/users/new">Create an account <span class="sr-only">(current)</span></a></li>
+          <li><a href="/jobs">View jobs</a></li>
+          <li><a href="/jobs/new">Add a job</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">How it works</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><% if current_user %> <%= current_user.email %><% else %> <% 'Login' %>   <% end %><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li role="separator" class="divider"></li>
+              <li>  <% if current_user %>
+                <%= link_to 'Logout', session_path(session), method: :delete%>
+                <%else%>
+                <%= link_to "Please Login", new_session_path %>
+                <%end%>
+              </li>
+            </ul>
+
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+<% flash.each do |name, message| %>
+     <div class="flash-message flash-message-<%= name %> bg-danger">
+    <%= message %>
+   </div>
+<% end %>
+
+
+
+<%= yield %>
+<footer class=text-center> Apps for the Informed Economy. Made with peace & <span class="glyphicon glyphicon-heart"></span> in Santa Monica, California.</footer>
+</body>
+</html>

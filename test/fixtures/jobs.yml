@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  job_start: 2015-07-28 11:38:37
+  job_end: 2015-07-28 11:38:37
+
+two:
+  job_start: 2015-07-28 11:38:37
+  job_end: 2015-07-28 11:38:37

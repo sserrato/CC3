@@ -1,0 +1,49 @@
+<h1>Jobs#new</h1>
+<p>Find me in app/views/jobs/new.html.erb</p>
+<h1>Create new job</h1>
+  <%= form_for @job do |f| %>
+    <% if @job.errors.any? %>
+      <div class="error_messages">
+        <h2>Form is invalid.</h2>
+        <ul>
+          <% for message in @job.errors.full_messages %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="form-group">
+      <%= f.label :job_start %>
+      <%= f.datetime_field :job_start, class:"form-control", :value => "11/1/2016" %>
+
+      <%= f.label :job_end %>
+      <%= f.datetime_field :job_end, class:"form-control", :value => "11/3/2016" %>
+
+      <%= f.label :location_street %>
+      <%= f.text_field :location_street, class:"form-control", :value => "400 North Street" %>
+
+      <%= f.label :location_city %>
+      <%= f.text_field :location_city, class:"form-control", :value => "Brea" %>
+
+      <%= f.label :location_zip %>
+      <%= f.text_field :location_zip, class:"form-control", :value => "94023" %>
+
+      <%= f.label :state %>
+      <%= f.text_field :state, class:"form-control", :value => "CA" %>
+
+    </div>
+    <% @job.skills.each do |skill_list| %>
+        <%= f.fields_for skill_list do |skill| %>
+
+    <form class="form-inline">
+      <div class="form-group">
+        <%= skill.label "block mason" %>
+        <%= skill.check_box :sk_block_mason %>
+      </form>
+    </div>
+
+
+<div class="actions"><%= f.submit %></div>
+  <% end %>
+  <% end %>
+  <% end %>

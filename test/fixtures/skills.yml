@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  finisher_sk: MyString
+  form_setter_sk: MyString
+  stone_mason_sk: MyString
+  brick_mason_sk: MyString
+  block_mason_sk: MyString
+  location_street: MyString
+  location_city: MyString
+  location_zip: 1
+  state: MyString
+
+two:
+  finisher_sk: MyString
+  form_setter_sk: MyString
+  stone_mason_sk: MyString
+  brick_mason_sk: MyString
+  block_mason_sk: MyString
+  location_street: MyString
+  location_city: MyString
+  location_zip: 1
+  state: MyString

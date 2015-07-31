@@ -1,6 +1,5 @@
-<h1>Jobs#new</h1>
-<p>Find me in app/views/jobs/new.html.erb</p>
-<h1>Create new job</h1>
+
+<h1>Create new job & staff up</h1>
   <%= form_for @job do |f| %>
     <% if @job.errors.any? %>
       <div class="error_messages">
@@ -32,8 +31,10 @@
       <%= f.text_field :state, class:"form-control", :value => "CA" %>
 
     </div>
-    <% @job.skills.each do |skill_list| %>
-        <%= f.fields_for skill_list do |skill| %>
+
+
+    <!-- <% @job.skills.each do |skill_list| %>
+        <%= f.fields_for skill_list do |skill| %> -->
 
     <form class="form-inline">
       <div class="form-group">

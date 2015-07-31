@@ -10,9 +10,9 @@ class JobsController < ApplicationController
 
   def create
     @job = Job.new job_params
-    @skills = @job.skills.new
-    if @job.save && @skills.save
-      redirect_to root
+    # @skills = @job.skills.new
+    if @job.save # && @skills.save
+      redirect_to jobs_path
     else
       render 'new'
     end

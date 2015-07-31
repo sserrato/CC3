@@ -1,7 +1,8 @@
-<h1>Users#show</h1>
+<h1>Your profile</h1>
   <ul>
     <li> <%=@user.email %>
     <li> your magic number is <%=@user.id %> </li>
-    <li> <% @user.skills.each do |skill_list| %> </li>
 
-      </ul>
+    <li> <%=@user.skills.last(4)%>
+    <li> <%=@user.skills.select(:sk_finisher).to_s%>
+  </ul>

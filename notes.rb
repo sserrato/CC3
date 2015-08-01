@@ -1,4 +1,9 @@
 <h2>Your skills </h2>
+
+
+@user = USer.where(skill: params(:size), )
+
+
 <% @job.skills.each do |skill_list| %>
     <%= f.fields_for skill_list do |skill| %>
 

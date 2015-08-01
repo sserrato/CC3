@@ -1,15 +1,23 @@
 <h1>Your profile</h1>
-<div class="caption">
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</div>
-  <ul>
-    <li> <%=@user.email %>
-    <li> your magic number is <%=@user.id %> </li>
+  <div class="caption">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </div> <br>
 
-    <li> <%=@user.skills.last(4)%>
+  <ul class="container">
 
-    <% @user.skills.each do |skill_list| %>
-    <%= skill_list[0]%>
-    <% end %>
-    <li></li>
+    <h2>Here is where we will connect you with jobs:</h2>
+      <li>Your email is <%=@user.email %>
+      <li>Your phone number is <%=@user.phone %>
+      <li>Your zip code is <%=@user.zip %>
+
+    <h2>Here is we know you can do: </h2>
+      <% @user.skills.each do |skill_list| %>
+        <li>You are a block mason: <%= skill_list[:sk_block_mason]%> </li>
+        <li>You are a brick mason: <%= skill_list[:sk_brick_mason]%> </li>
+        <li>You are a finisher: <%= skill_list[:sk_finisher]%> </li>
+        <li>You are a form setter: <%= skill_list[:sk_form_setter]%> </li>
+        <li>You are a stone mason: <%= skill_list[:sk_stone_mason]%> </li>
+      <% end %>
   </ul>
+      <%= link_to "Any detail need to change? do it here.", edit_user_path %>
+<!-- <%= button_to "Any detail need to change? do it here.", edit_user_path%></h2> -->

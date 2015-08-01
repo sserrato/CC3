@@ -5,7 +5,7 @@ class JobsController < ApplicationController
 
   def new
     @job = Job.new
-    @skills = @job.skills.new
+    @job.skills.new 
   end
 
   def create

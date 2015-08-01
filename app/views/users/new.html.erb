@@ -1,29 +1,29 @@
 <div class="jumbotron" id="new">
-<h1>Join ConcreteC</h1>
-  <%= form_for @user do |f| %>
-      <% if @user.errors.any? %>
-        <div class="error_messages">
-        <h2>Form is invalid</h2>
-        <ul>
-          <% for message in @user.errors.full_messages %>
-              <div class="bg-danger" ><%= message %></div>
-          <% end %>
-        </ul>
+  <h1>Join ConcreteC</h1>
+    <%= form_for @user do |f| %>
+        <% if @user.errors.any? %>
+          <div class="error_messages">
+          <h2>Form is invalid</h2>
+          <ul>
+            <% for message in @user.errors.full_messages %>
+                <div class="bg-danger" ><%= message %></div>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="form-group">
+        <%= f.label :email %>
+        <%= f.text_field :email, class: "form-control",  :value => "you@email.com" %>
       </div>
-    <% end %>
-    <div class="form-group">
-      <%= f.label :email %>
-      <%= f.text_field :email, class: "form-control",  :value => "you@email.com" %>
-    </div>
-    <div class="form-group">
-      <%= f.label :password %>
-      <%= f.password_field :password, class: "form-control"%>
-      <%= f.label :password_confirmation%>
-      <%= f.password_field :password_confirmation, class: "form-control"  %>
-    </div>
-    <div class="actions">
-      <%= f.submit class: "btn btn-default" %>   Aready a member? <%= link_to "Please come on in and find some work.", new_session_path %>
-    </div>
+      <div class="form-group">
+        <%= f.label :password %>
+        <%= f.password_field :password, class: "form-control"%>
+        <%= f.label :password_confirmation%>
+        <%= f.password_field :password_confirmation, class: "form-control"  %>
+      </div>
+      <div class="actions">
+        <%= f.submit class: "btn btn-default" %>   Aready a member? <%= link_to "Please come on in and find some work.", new_session_path %>
+      </div>
 
-  <% end %>
+    <% end %>
 </div>

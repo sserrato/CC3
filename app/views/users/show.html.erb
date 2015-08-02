@@ -6,18 +6,49 @@
   <ul class="container">
 
     <h2>Here is where we will connect you with jobs:</h2>
-      <li>Your email is <%=@user.email %>
-      <li>Your phone number is <%=@user.phone %>
-      <li>Your zip code is <%=@user.zip %>
+      <li>Your email is <%=current_user.email %>
+      <li>Your phone number is <%=current_user.phone %>
+      <li>Your zip code is <%=current_user.zip %>
 
-    <h2>Here is we know you can do: </h2>
-      <% @user.skills.each do |skill_list| %>
-        <li>You are a block mason: <%= skill_list[:sk_block_mason]%> </li>
-        <li>You are a brick mason: <%= skill_list[:sk_brick_mason]%> </li>
-        <li>You are a finisher: <%= skill_list[:sk_finisher]%> </li>
-        <li>You are a form setter: <%= skill_list[:sk_form_setter]%> </li>
-        <li>You are a stone mason: <%= skill_list[:sk_stone_mason]%> </li>
+
+    <h2>Here is what we know you can do: </h2>
+
+      <% current_user.skills.each do |skill_list| %>
+
+        <li><%= @block_mason %> <%=   if skill_list[:sk_block_mason]
+                                        @block_mason = "You are a block mason."
+                                      else
+                                        @block_mason = "You are not a block mason."
+                                      end%> </li>
+
+        <li><%= @brick_mason %> <%=   if skill_list[:sk_brick_mason]
+                                        @brick_mason = "You are a brick mason."
+                                      else
+                                        @brick_mason = "You are not a brick mason. "
+                                      end%> </li>
+
+        <li><%= @finisher %> <%=    if skill_list[:sk_finisher]
+                                      @finisher = "You are a finisher."
+                                    else
+                                      @finisher = "You aren't a finisher."
+                                    end%> </li>
+
+
+        <li> <%= @form_setter%><%=  if skill_list[:sk_form_setter]
+                                      @form_setter = "You are a form setter."
+                                    else
+                                      @form_setter = "You are not a form setter."
+                                    end%> </li>
+
+
+        <li><%= @stone_mason %><%=  if skill_list[:sk_stone_mason]
+                                      @stone_mason = "You are  a stone mason."
+                                    else
+                                      @stone_mason = "You are not a stone mason."
+                                    end%> </li>
       <% end %>
   </ul>
-      <%= link_to "Any detail need to change? do it here.", edit_user_path %>
+
+      <h2><%= link_to "Any detail need to change? Click here.", edit_user_path %></h2>
+
 <!-- <%= button_to "Any detail need to change? do it here.", edit_user_path%></h2> -->

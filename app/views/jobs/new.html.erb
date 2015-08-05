@@ -32,8 +32,8 @@
     </div>
 
 
-    <!-- <% @job.skills.each do |skill_list| %>
-        <%= f.fields_for skill_list do |skill| %> -->
+    <% @job.skills.each do |skill_list| %>
+        <%= f.fields_for skill_list do |skill| %>
 
     <form class="form-inline">
       <div class="form-group">
@@ -51,11 +51,12 @@
 
         <%= skill.label "stone mason" %>
         <%= skill.check_box :sk_stone_mason %>
+    <div class="actions"><%= f.submit %></div>
       </form>
     </div>
 
 
-<div class="actions"><%= f.submit %></div>
+
   <% end %>
   <% end %>
   <% end %>

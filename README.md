@@ -1,5 +1,5 @@
 # ConcreteC
-Ruby on Rails application for organizing teams in the informal economy. Firme. 
+Ruby on Rails application for organizing teams in the informal economy. 
 
 The informal economy is vast. The informal economy is activity that occurs outside regulation and paid for with cash.  As of 2013, informal economic activity was around 2 trillion dollars. As a point of reference official GDP in 2013 was 16.7 trillion dollars. All indicators point to growth in the informal economy. 
 The US cement construction industry is on track to consume 97 million tons of cement in 2015. This is up 13% compared to 2014. A great deal of activity in this industry is within the informal economy. 

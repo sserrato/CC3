@@ -14,11 +14,11 @@
       <% @jobs.each do |j| %>
           <tr>
             <td><%=j.id %></td>
-            <td><%=j.job_start %></td>
+            <td><%=j.job_start%></td>
             <td><%=j.job_end %></td>
             <td><%=j.location_street %></td>
             <td><%=j.location_city%></td>
-            <td><%=j.created_at%></td>
+            <td><%= time_ago_in_words(j.created_at)+ " ago"%></td>
           <% end %>
           </tr>
     </tbody>

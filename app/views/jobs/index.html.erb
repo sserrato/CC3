@@ -1,4 +1,10 @@
 <h1>Upcoming jobs</h1>
+<div class="">
+
+<!-- this uses a array of jobs with a local instance of .strftime working  -->
+<%=@jobsArr[1].job_start.strftime('%c') %>
+<p><%= l Time.now, format: :short %></p>
+</div>
 
 <table class="table table-striped">
   <thead>
@@ -14,13 +20,14 @@
       <% @jobs.each do |j| %>
           <tr>
             <td><%=j.id %></td>
-            <td><%=j.job_start %></td>
-            <td><%=j.job_end %></td>
+            <td><%=j.job_start.strftime('%c')%></td>
+            <td><%= j.job_end.to_s   %></td>
             <td><%=j.location_street %></td>
             <td><%=j.location_city%></td>
-            <td><%=j.created_at%></td>
+            <td><%= time_ago_in_words(j.created_at)+ " ago"%></td>
           <% end %>
           </tr>
     </tbody>
 </table>
+
 </div>

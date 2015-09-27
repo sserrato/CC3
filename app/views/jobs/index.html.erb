@@ -20,7 +20,7 @@
       <% @jobs.each do |j| %>
           <tr>
             <td><%=j.id %></td>
-            <td><%=j.job_start%></td>
+            <td><%=j.job_start.strftime('%c')%></td>
             <td><%= j.job_end.to_s   %></td>
             <td><%=j.location_street %></td>
             <td><%=j.location_city%></td>

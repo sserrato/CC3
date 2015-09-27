@@ -20,8 +20,8 @@
       <% @jobs.each do |j| %>
           <tr>
             <td><%=j.id %></td>
-            <td><%=j.job_start.strftime('%c')%></td>
-            <td><%= j.job_end.to_s   %></td>
+            <td><%=j.job_start.strftime('%a %b %e' +' 20''%y')%></td>
+            <td><%= j.job_end.strftime('%a %b %e' +' 20''%y')  %></td>
             <td><%=j.location_street %></td>
             <td><%=j.location_city%></td>
             <td><%= time_ago_in_words(j.created_at)+ " ago"%></td>

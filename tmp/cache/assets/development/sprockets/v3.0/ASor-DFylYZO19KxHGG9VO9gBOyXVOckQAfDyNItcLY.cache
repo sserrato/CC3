@@ -1,0 +1,7 @@
+I"s(function() {
+  jQuery(function() {
+    return $('.form-group job_start').datepicker();
+  });
+
+}).call(this);
+:ET

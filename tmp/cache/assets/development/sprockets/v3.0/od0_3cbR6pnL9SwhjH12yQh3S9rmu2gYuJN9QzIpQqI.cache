@@ -1,0 +1,12 @@
+I"Ó(function() {
+  jQuery(function() {
+    $("#job_job_start").datepicker({
+      dateFormat: 'yy-mm-dd'
+    });
+    return $("#job_job_end").datepicker({
+      dateFormat: 'yy-mm-dd'
+    });
+  });
+
+}).call(this);
+:ET

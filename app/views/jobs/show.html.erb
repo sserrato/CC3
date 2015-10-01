@@ -1,2 +1,17 @@
 <h1>Jobs#show</h1>
 <p>Find me in app/views/jobs/show.html.erb</p>
+      <% @job  %>
+
+      <td><%=@job.job_start.strftime('%a %b %e' +' 20''%y')%></td>
+      <td><%= @job.job_end.strftime('%a %b %e' +' 20''%y')%></td>
+      <td><%=@job.location_street %></td>
+      <td><%=@job.location_city%></td>
+      <td><%=@job.location_zip%></td>
+      <td><%@job.skills.each do |skill_list|%>
+        Brick mason:  <%=  skill_list[:sk_brick_mason] %> <br>
+        Stone mason:  <%=  skill_list[:sk_stone_mason] %><br>
+        Block mason:  <%=  skill_list[:sk_block_mason] %><br>
+        Finisher:  <%=  skill_list[:sk_finisher] %><br>
+        Form setter:  <%=  skill_list[:sk_form_setter] %><br>
+        <% end %>
+      </td>

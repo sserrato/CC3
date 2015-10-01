@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 gem 'jquery-ui-rails', '~> 5.0.5'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
+gem 'normalize-rails'
+gem 'area'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'

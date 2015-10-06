@@ -1,4 +1,12 @@
 class JobsController < ApplicationController
+
+  def inspect
+      "This #{@job} is in need of #{@job.skills.sk_finisher}"
+  end
+  def to_s
+    inspect
+  end
+
   def index
     @jobs = Job.all
     @jobsArr = @jobs
@@ -14,7 +22,7 @@ class JobsController < ApplicationController
     @job = Job.new job_params
     @skills = @job.skills.new
     if @job.save && @skills.save
-      redirect_to jobs_path
+      redirect_to jobs_path(@job.id)
     else
       render 'new'
     end
@@ -27,7 +35,13 @@ class JobsController < ApplicationController
   end
 
   def edit
-  end
+    @job = Job.find(params[:id])
+    @skill = @job.skills.first
+  end #ends edit def
+
+  def update
+    @job = User.find(params[:id])
+    @skill = @user.skills.first 
 
   def delete
   end

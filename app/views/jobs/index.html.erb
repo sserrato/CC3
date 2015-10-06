@@ -9,6 +9,7 @@
       <th>Street</th>
       <th>City</th>
       <th>Job created</th>
+      <th>Review</th>
     </tr>
     <tbody>
       <% @jobs.each do |j| %>
@@ -19,6 +20,7 @@
             <td><%=j.location_street %></td>
             <td><%=j.location_city%></td>
             <td><%= time_ago_in_words(j.created_at)+ " ago"%></td>
+            <td><%= link_to j.id, edit_job_path (j.id)%></td>
           <% end %>
           </tr>
     </tbody>

@@ -1,4 +1,5 @@
 <h1>Jobs#show</h1>
+<h1><%= @jobID %> </h1>
 <p>Find me in app/views/jobs/show.html.erb</p>
       <h1>job object</h1>
       <%= @job  %>
@@ -22,3 +23,34 @@
         Form setter:  <%=  skill_list[:sk_form_setter] %><br>
         <% end %>
       </td>
+      <h1>Form</h1>
+      <%= form_for @job do |f| %>
+      <% @job.skills.each do |skill_list| %>
+          <%= f.fields_for skill_list do |skill| %>
+      <%= @job.inspect %>
+      <form class="form-inline">
+        <div class="form-group">
+          <%= skill.label "block mason" %>
+          <%= skill.check_box :sk_block_mason %>
+
+          <%= skill.label "brick mason" %>
+          <%= skill.check_box :sk_brick_mason %>
+
+          <%= skill.label "finisher" %>
+          <%= skill.check_box :sk_finisher %>
+
+          <%= skill.label "form setter" %>
+          <%= skill.check_box :sk_form_setter %>
+
+          <%= skill.label "stone mason" %>
+          <%= skill.check_box :sk_stone_mason %>
+      <div class="actions"><%= f.submit %></div>
+  <% end %>
+        </form>
+
+      </div>
+    <!-- not savign the job form -->
+
+
+    <% end %>
+    <% end %>

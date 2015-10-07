@@ -37,12 +37,12 @@ class JobsController < ApplicationController
   end
 
   def edit
-    @job = Job.find(params[:id])
+    @job = Job.find_by_id(params[:id])
     @skill = @job.skills.first
   end #ends edit def
 
   def update
-    @job = Job.find(params[:id])
+    @job = Job.find_by_id(params[:id])
     @skill = @job.skills.first
   end
 
